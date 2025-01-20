@@ -33,6 +33,10 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --main-key-color1: 'rgb(240, 186, 50)';
+    --sub-key-color1: 'rgb(246, 213, 128)';
+    --main-key-color2: 'rgb(27, 164, 102)';
+    --sub-key-color2: 'rgb(198, 237, 219)';
   }
   .dark {
     --background: 0 0% 3.9%;

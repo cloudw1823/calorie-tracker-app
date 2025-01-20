@@ -52,9 +52,9 @@ const ExpandableToolbar: React.FC<ExpandableToolbarProps> = ({
     }
 
     return (
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center ">
             <div
-                className={`grid grid-cols-3 bg-white rounded-lg transition-all duration-600 gap-6 items-center px-4 max-w-lg ${
+                className={`flex flex-row bg-white rounded-lg transition-all duration-600 gap-6 items-center p-6 max-w-lg border-gray-50 shadow-md w-full ${
                     isExpanded
                         ? 'opacity-100 h-16 scale-x-100'
                         : 'opacity-0 scale-x-0'
@@ -80,6 +80,13 @@ const ExpandableToolbar: React.FC<ExpandableToolbarProps> = ({
                                 Profile
                             </span>
                         </div>
+                        <div
+                            className="flex flex-col items-center justify-center cursor-pointer"
+                            onClick={() => setIsEntryOpen(true)}
+                        >
+                            <MdSaveAlt className="text-red-500 w-6 h-6" />
+                            <span className="text-sm text-gray-700">Entry</span>
+                        </div>
                     </>
                 ) : (
                     <>
@@ -101,19 +108,11 @@ const ExpandableToolbar: React.FC<ExpandableToolbarProps> = ({
                         </div>
                     </>
                 )}
-
-                <div
-                    className="flex flex-col items-center justify-center cursor-pointer"
-                    onClick={() => setIsEntryOpen(true)}
-                >
-                    <MdSaveAlt className="text-red-500 w-6 h-6" />
-                    <span className="text-sm text-gray-700">Entry</span>
-                </div>
             </div>
             <div className="z-20 mt-3">
                 <button
                     onClick={() => setIsExpanded((prev) => !prev)}
-                    className="flex items-center justify-center w-14 h-14 bg-indigo-500 text-white rounded-full shadow-lg transition-transform duration-300"
+                    className="flex items-center justify-center w-14 h-14 bg-main-key-color1 text-white rounded-full shadow-lg transition-transform duration-300"
                 >
                     <PlusIcon
                         className={`w-8 h-8 transform transition-transform duration-300 ${

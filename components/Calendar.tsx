@@ -22,20 +22,20 @@ export default function Calendar() {
   }
 
   return (
-      <div className={`relative bg-white py-6 px-4 rounded-lg shadow-md`}>
-          <div className="grid grid-cols-7 gap-4 sm:gap-6 md:gap-8 lg:gap-20 w-full md:max-w-md lg:max-w-lg">
+      <div className={`relative w-full px-1 md:px-3 `}>
+          <div className="grid grid-cols-7 w-full">
               {weekDates.map((item, index) => (
                   <div
-                      className={`flex flex-col gap-y-3 ${
+                      className={`flex flex-col gap-y-3 w-fit py-6 px-3 md:py-3 md:px-1 ${
                           item.isToday
-                              ? 'bg-indigo-400 text-white rounded-lg'
+                              ? 'bg-main-key-color2 text-white rounded-full'
                               : 'bg-transparent'
                       }`}
                       key={index}
                   >
                       <span
                           key={`day-${index}`}
-                          className={`text-center font-bold text-xl md:text-base ${
+                          className={`text-center font-bold w-fit text-sm md:text-sm lg:text-lg ${
                               !item.isToday ? 'text-gray-400' : ''
                           }`}
                       >
@@ -43,8 +43,8 @@ export default function Calendar() {
                       </span>
                       <span
                           key={`date-${index}`}
-                          className={`text-center font-bold text-xl md:text-base ${
-                              !item.isToday ? 'text-indigo-400' : ''
+                          className={`text-center font-bold w-fit text-sm md:text-sm lg:text-lg ${
+                              !item.isToday ? 'text-main-key-color2' : ''
                           }`}
                       >
                           {item.date}
